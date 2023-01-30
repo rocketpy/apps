@@ -1,6 +1,12 @@
-# 
+# Build web apps in minutes. Deploy with a single command.
 
 # Component: https://pynecone.io/docs/library
+
+# pip install pynecone-io
+
+# mkdir my_app_name
+# cd my_app_name
+# pc init
 
 #  Example
 
@@ -33,3 +39,7 @@ def index():
             on_click=State.increment,
         ),
     )
+app = pc.App(state=State)
+app.add_page(index)
+app.compile()
+
