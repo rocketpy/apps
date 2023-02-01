@@ -2,12 +2,34 @@
 
 
 # Component: https://pynecone.io/docs/library
+# https://pypi.org/project/pynecone-io/
 
+# pip install pynecone
 # pip install pynecone-io
 
 # mkdir my_app_name
 # cd my_app_name
 # pc init
+
+# Run the App
+# pc run
+
+# see your app running at http://localhost:3000
+
+# Config
+# The pcconfig.py file contains configuration for your app.
+# By default it looks something like this:
+
+import pynecone as pc
+
+
+config = pc.Config(
+    app_name="hello",
+    bun_path="$HOME/.bun/bin/bun",
+    db_url="sqlite:///pynecone.db",
+    env=pc.Env.DEV,
+    port=3000,
+)
 
 
 # Example Pynecone App
