@@ -130,3 +130,29 @@ app = pc.App(state=State)
 app.add_page(index)
 app.compile()
 
+
+# Custom Vars
+import googletrans
+
+
+class Translation(pc.Base):
+    original_text: str
+    translated_text: str
+
+
+class TranslationState(pc.State):
+    input_text: str = "Hola Mundo"
+    current_translation: Translation = Translation(
+        original_text="", translated_text=""
+    )
+
+    def translate(self):
+        text = (
+            googletrans.Translator()
+            .translate(self.input_text, dest="en")
+            .text
+        )
+        self.current_translation = Translation(
+            original_text=self.input_text,
+            tr
+
