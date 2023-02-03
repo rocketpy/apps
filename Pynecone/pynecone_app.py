@@ -154,5 +154,21 @@ class TranslationState(pc.State):
         )
         self.current_translation = Translation(
             original_text=self.input_text,
-            tr
+            translated_text=text,
+        )
+
+
+pc.vstack(
+    pc.input(
+        on_blur=TranslationState.set_input_text,
+        default_value=TranslationState.input_text,
+        placeholder="Text to translate...",
+    ),
+    pc.button(
+        "Translate", on_click=TranslationState.translate
+    ),
+    pc.text(
+        TranslationState.current_translation.translated_text
+    ),
+)
 
